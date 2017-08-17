@@ -1,0 +1,14 @@
+bookingservice:
+ image: blace/bookingservice:latest
+ links:
+   - mongodb
+ ports:
+   - "9000:8080"
+ container_name: "bookingservice"
+mongodb:
+ image: mongo:latest
+ volumes:
+    - "/opt/mongodb:/data/db"
+ ports:
+    - "27017:27017"
+ container_name: "mongodb"
